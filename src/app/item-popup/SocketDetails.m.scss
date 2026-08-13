@@ -24,7 +24,7 @@
 }
 
 .clickableMod {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   :global(.item-img) {
     border-color: var(--theme-item-socket-border);

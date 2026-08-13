@@ -38,7 +38,7 @@
   a {
     text-decoration: underline;
     color: #ccc;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 }
 

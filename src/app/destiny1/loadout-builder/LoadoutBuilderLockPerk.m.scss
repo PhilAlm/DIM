@@ -18,7 +18,7 @@
   composes: itemSized;
   background-color: #656565;
   border: 2px solid #ddd;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   > img {
     width: 100%;

@@ -15,7 +15,7 @@
   composes: resetButton from 'app/dim-ui/common.m.scss';
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true) {
     :global(.app-icon) {

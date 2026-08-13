@@ -97,7 +97,7 @@ $content-cells: 5;
     .hasFilter {
       @include interactive($hover: true) {
         background-color: var(--theme-accent-primary) !important;
-        cursor: pointer;
+        cursor: var(--cursor-pointer);
       }
     }
   }

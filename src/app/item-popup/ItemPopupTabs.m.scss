@@ -8,7 +8,7 @@
   composes: resetButton from '../dim-ui/common.m.scss';
   color: hsl(0, 0%, 80%);
   padding: 5px 0 3px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   width: 100%;
   text-align: center;
   border-bottom: 2px solid #222;

@@ -29,7 +29,7 @@
   contain: layout paint style;
   box-sizing: border-box;
   width: var(--item-size);
-  cursor: grab;
+  cursor: var(--cursor-grab);
 
   @include interactive($hover: true) {
     @include draggable-hover-border;

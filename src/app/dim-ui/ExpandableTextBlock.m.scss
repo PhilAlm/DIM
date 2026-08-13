@@ -5,7 +5,7 @@
   overflow: hidden;
 
   @include interactive($hover: true) {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
   &::after {
     content: '';
@@ -15,7 +15,7 @@
   }
   &.open {
     @include interactive($hover: true) {
-      cursor: default;
+      cursor: var(--cursor-default);
     }
   }
   &.open::after {

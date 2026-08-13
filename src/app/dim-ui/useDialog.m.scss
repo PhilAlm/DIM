@@ -14,7 +14,7 @@
   width: 40em;
   box-sizing: border-box;
   overflow: visible;
-  cursor: default;
+  cursor: var(--cursor-default);
 
   @include phone-portrait {
     min-width: 100%;

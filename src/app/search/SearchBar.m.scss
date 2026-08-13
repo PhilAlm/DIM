@@ -68,7 +68,7 @@
   gap: 6px;
 
   @include interactive($hover: true) {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 
   @include phone-portrait {
@@ -179,7 +179,7 @@
   display: inline-block;
   background: transparent;
   border: 0;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true) {
     > span,

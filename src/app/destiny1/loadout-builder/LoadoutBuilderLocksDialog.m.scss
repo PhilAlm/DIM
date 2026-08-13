@@ -12,7 +12,7 @@ $and-color: #814bcf;
   width: calc(var(--item-size) + 20px);
   padding-left: 3px;
   padding-right: 3px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true) {
     background-color: $or-color;

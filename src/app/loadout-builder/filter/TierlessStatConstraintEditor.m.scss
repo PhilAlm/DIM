@@ -13,11 +13,11 @@
 }
 
 .grabHandle {
-  cursor: grab;
+  cursor: var(--cursor-grab);
   touch-action: none;
 
   &:active {
-    cursor: grabbing;
+    cursor: var(--cursor-grabbing);
   }
 }
 
@@ -124,7 +124,7 @@
   background-color: #333;
   height: 12px;
   position: relative;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .statBarFill {

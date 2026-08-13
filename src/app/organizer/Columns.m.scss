@@ -75,7 +75,7 @@
 
     @include interactive($hover: true) {
       outline: 1px solid var(--theme-item-polaroid-hover-border);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
   }
 }
@@ -161,7 +161,7 @@
   font-weight: bold;
 }
 .perkSelectable {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 // copy pasted from src/app/item-popup/PlugTooltip.m.scss with spacing tweaks
 .enhancedArrow {

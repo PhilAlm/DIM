@@ -26,7 +26,7 @@
 
 .itemImage {
   --item-size: var(--item-icon-size);
-  cursor: default;
+  cursor: var(--cursor-default);
   pointer-events: auto;
   grid-column: 1;
 }

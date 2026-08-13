@@ -41,7 +41,7 @@
     text-decoration-line: none;
 
     @include interactive($hover: true) {
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
   }
 }

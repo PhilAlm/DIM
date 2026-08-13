@@ -47,6 +47,25 @@
   }
 
   :root {
+    // Destiny 2 cursor set. Keep native cursor keywords as fallbacks for browsers and touch devices.
+    --cursor-default: url('../cursors/d2/normal.cur'), default;
+    --cursor-pointer: url('../cursors/d2/pointer.cur'), pointer;
+    --cursor-text: url('../cursors/d2/text.cur'), text;
+    --cursor-wait: url('../cursors/d2/wait.cur'), wait;
+    --cursor-progress: url('../cursors/d2/progress.cur'), progress;
+    --cursor-help: url('../cursors/d2/help.cur'), help;
+    --cursor-move: url('../cursors/d2/pointer.cur'), move;
+    --cursor-grab: url('../cursors/d2/pointer.cur'), grab;
+    --cursor-grabbing: url('../cursors/d2/pointer.cur'), grabbing;
+    --cursor-not-allowed: url('../cursors/d2/not-allowed.cur'), not-allowed;
+    --cursor-resize-ns: url('../cursors/d2/resize-ns.cur'), ns-resize;
+    --cursor-resize-ew: url('../cursors/d2/resize-ew.cur'), ew-resize;
+    --cursor-resize-nwse: url('../cursors/d2/resize-nwse.cur'), nwse-resize;
+    --cursor-resize-nesw: url('../cursors/d2/resize-nesw.cur'), nesw-resize;
+    --cursor-writing: url('../cursors/d2/writing.cur'), default;
+    --cursor-person: url('../cursors/d2/person.cur'), default;
+    --cursor-location: url('../cursors/d2/location.cur'), crosshair;
+
     // Item width including border
     --item-size: 50px;
     // Margin on the bottom and right of an item
@@ -161,7 +180,7 @@
 
   a {
     color: var(--theme-text);
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     text-decoration: underline;
   }
 
@@ -184,6 +203,7 @@
   }
 
   body {
+    cursor: var(--cursor-default);
     margin: 0 auto;
     background-color: var(--theme-pwa-background);
     color: var(--theme-text);
@@ -205,7 +225,7 @@
   }
 
   *[role='button'] {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 
   /* Forms */

@@ -11,7 +11,7 @@
 
 @layer base {
   .dim-button {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     padding: 4px 10px;
     min-height: 26px;
     display: flex;
@@ -77,7 +77,7 @@
 
     &[disabled] {
       opacity: 0.5;
-      cursor: not-allowed;
+      cursor: var(--cursor-not-allowed);
 
       @include interactive($hover: true, $active: true, $selectedClass: '.selected') {
         background-color: var(--theme-button-bg);

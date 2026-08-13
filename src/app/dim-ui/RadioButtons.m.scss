@@ -11,5 +11,5 @@
 
 .selected {
   composes: selected from global;
-  cursor: default;
+  cursor: var(--cursor-default);
 }

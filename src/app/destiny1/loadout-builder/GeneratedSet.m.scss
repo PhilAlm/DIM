@@ -20,7 +20,7 @@
 .expandConfigs {
   @include interactive($hover: true) {
     color: var(--theme-accent-primary);
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
   :global(.app-icon) {
     margin-right: 0.25em;

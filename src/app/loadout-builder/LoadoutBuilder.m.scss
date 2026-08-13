@@ -125,7 +125,7 @@
   composes: resetButton from '../dim-ui/common.m.scss';
   padding: 12px 12px 12px 12px;
   color: rgb(255, 255, 255, 0.5);
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   position: absolute;
   right: 0;
   top: 0;

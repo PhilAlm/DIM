@@ -1,7 +1,7 @@
 @use '../variables.scss' as *;
 
 .tile {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   height: 54px;
   width: 123px;
 }
@@ -46,7 +46,7 @@
   text-align: center;
 
   :global(.item) {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 
   :global(.item-img) {

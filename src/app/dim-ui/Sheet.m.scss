@@ -27,7 +27,7 @@ $control-color: rgb(255, 255, 255, 0.5);
   padding: 11px 48px 10px 10px;
   border-bottom: 1px solid #333;
   border-top: 5px solid $control-color;
-  cursor: grab;
+  cursor: var(--cursor-grab);
   // without a min-height, the border-bottom sticks through the close sheet button
   min-height: 56px;
   flex-shrink: 0;
@@ -86,7 +86,7 @@ $control-color: rgb(255, 255, 255, 0.5);
   top: 0;
   padding: 18px 12px 12px 12px;
   color: $control-color;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true, $active: true, $focus: true) {
     color: var(--theme-accent-primary);

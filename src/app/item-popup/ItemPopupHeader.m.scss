@@ -24,7 +24,7 @@ $iconOverlayScale: math.div(65, 96);
 .armory {
   @include interactive($hover: true, $focus: true) {
     outline: none;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     h1 {
       text-decoration: underline;
     }

@@ -14,7 +14,7 @@
 
   summary {
     font-weight: bold;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
   &[open] summary {
     margin-bottom: 4px;

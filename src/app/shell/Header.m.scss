@@ -58,7 +58,7 @@ $header-height: 44px;
 
       @include interactive($hover: true) {
         color: var(--theme-accent-primary);
-        cursor: pointer;
+        cursor: var(--cursor-pointer);
       }
     }
   }
@@ -84,7 +84,7 @@ $header-height: 44px;
   white-space: nowrap;
 
   color: var(--theme-text);
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include phone-portrait {
     margin: 0 12px;
@@ -101,7 +101,7 @@ $header-height: 44px;
 
 .headerRight {
   -webkit-app-region: no-drag;
-  cursor: default;
+  cursor: var(--cursor-default);
   display: flex;
   flex: 1;
   margin: 0 6px 0 8px;

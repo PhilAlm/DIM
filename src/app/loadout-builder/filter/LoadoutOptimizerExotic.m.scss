@@ -3,7 +3,7 @@
   composes: flexRow from '../../dim-ui/common.m.scss';
   gap: 8px;
   margin-bottom: 8px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   > :first-child {
     flex-shrink: 0;
@@ -31,7 +31,7 @@
   composes: flexRow from '../../dim-ui/common.m.scss';
   gap: 8px;
   margin-bottom: 8px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .selectedPerk {

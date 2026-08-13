@@ -35,6 +35,6 @@
 
   &:disabled {
     filter: contrast(0.5) brightness(0.5);
-    cursor: not-allowed;
+    cursor: var(--cursor-not-allowed);
   }
 }

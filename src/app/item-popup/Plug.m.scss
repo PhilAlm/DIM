@@ -77,11 +77,11 @@
 }
 
 .selectable {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .hasMenu {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true, $focus: true) {
     outline: 1px solid var(--theme-accent-primary);

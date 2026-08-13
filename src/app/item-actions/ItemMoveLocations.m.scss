@@ -27,7 +27,7 @@
 
 .move {
   composes: resetButton from 'app/dim-ui/common.m.scss';
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   position: relative;
   display: flex;
   place-content: center;
@@ -80,7 +80,7 @@
 
   &:disabled {
     filter: contrast(0.5) brightness(0.5);
-    cursor: not-allowed;
+    cursor: var(--cursor-not-allowed);
   }
 }
 

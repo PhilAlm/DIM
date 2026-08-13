@@ -11,7 +11,7 @@
   composes: flexColumn from '../../dim-ui/common.m.scss';
   gap: 8px;
   margin-bottom: 8px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   // Don't let the individual set bonuses span the whole width
   > * > * {

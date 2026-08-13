@@ -135,7 +135,7 @@
 .itemImage {
   --item-size: 40px;
   margin: 0 5px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   pointer-events: auto;
 }
 

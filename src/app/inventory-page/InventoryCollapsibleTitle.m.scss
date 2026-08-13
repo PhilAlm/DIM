@@ -36,7 +36,7 @@
   > button {
     // Reset button
     all: unset;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
 
     display: flex;
     flex-direction: row;

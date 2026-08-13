@@ -9,7 +9,7 @@
   background-color: #222;
   display: block;
   width: 30%;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   @include interactive($hover: true) {
     background-color: var(--theme-accent-secondary);

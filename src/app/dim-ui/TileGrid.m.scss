@@ -28,7 +28,7 @@
     'icon title corner'
     'details details details';
   border: 1px solid transparent;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   padding: 8px;
   gap: 8px;
   box-sizing: border-box;
@@ -68,7 +68,7 @@
 
 .disabled {
   opacity: 0.5;
-  cursor: default;
+  cursor: var(--cursor-default);
 }
 
 .title {

@@ -6,7 +6,7 @@
   align-items: center;
   padding-right: 16px;
   padding-left: 4px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   position: sticky;
   left: 0;
   align-self: stretch;
@@ -32,7 +32,7 @@
 }
 .spacer {
   composes: header;
-  cursor: default !important;
+  cursor: var(--cursor-default) !important;
 }
 .headerContent {
   composes: flexRow from '../dim-ui/common.m.scss';
@@ -114,5 +114,5 @@
   padding: 0;
   right: 4px;
   top: calc(32px + 4px + 1lh);
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }

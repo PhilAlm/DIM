@@ -29,7 +29,7 @@
   composes: flexRow from '../dim-ui/common.m.scss';
   align-items: center;
   margin-right: 0.7em;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   &:last-child {
     margin-right: 0;

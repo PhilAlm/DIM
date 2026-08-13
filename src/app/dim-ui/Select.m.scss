@@ -45,7 +45,7 @@
 .highlighted {
   background-color: var(--theme-accent-primary);
   color: var(--theme-text-invert);
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   & :global(.app-icon) {
     color: var(--theme-text-inverted) !important;
   }

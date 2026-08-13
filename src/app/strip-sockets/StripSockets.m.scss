@@ -22,7 +22,7 @@
 
 .socketKindButton {
   border: 1px solid #666;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   margin: 1px 2px;
   padding: 8px;
   display: flex;
@@ -85,7 +85,7 @@
 }
 
 .plug {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   &.ok {
     opacity: 0.3;

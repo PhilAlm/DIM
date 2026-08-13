@@ -17,7 +17,7 @@ $touchPadding: 2px; // A bit of extra hit area
   vertical-align: middle;
 
   label {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     display: inline-block;
     position: relative;
     padding: $touchPadding !important;
@@ -75,13 +75,13 @@ $touchPadding: 2px; // A bit of extra hit area
     &:disabled {
       & + label {
         &::before {
-          cursor: not-allowed;
+          cursor: var(--cursor-not-allowed);
           background-color: rgb(255, 255, 255, 0.2) !important;
         }
         // The dot
         &::after {
           background-color: #666;
-          cursor: not-allowed;
+          cursor: var(--cursor-not-allowed);
         }
       }
     }

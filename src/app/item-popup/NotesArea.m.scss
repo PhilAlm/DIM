@@ -2,7 +2,7 @@
 
 .openNotesEditor {
   // wraps all the content that clicks open the notes editor
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 

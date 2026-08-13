@@ -1,5 +1,5 @@
 .itemTagSelector {
-  cursor: default;
+  cursor: var(--cursor-default);
   button {
     min-width: 10em;
     width: 100%;
