@@ -18,6 +18,7 @@ import D1ReputationSection from './D1ReputationSection';
 import * as styles from './DesktopStores.m.scss';
 import HeaderShadowDiv from './HeaderShadowDiv';
 import InventoryCollapsibleTitle from './InventoryCollapsibleTitle';
+import InventoryLayoutToggle, { InventoryLayout } from './InventoryLayoutToggle';
 import { StoreBuckets } from './StoreBuckets';
 import './Stores.scss';
 
@@ -25,13 +26,21 @@ interface Props {
   stores: DimStore[];
   buckets: InventoryBuckets;
   singleCharacter: boolean;
+  inventoryLayout?: InventoryLayout;
+  onInventoryLayoutChange?: (layout: InventoryLayout) => void;
 }
 /**
  * Display inventory and character headers for all characters and the vault.
  *
  * This is the desktop view only.
  */
-export default function DesktopStores({ stores, buckets, singleCharacter }: Props) {
+export default function DesktopStores({
+  stores,
+  buckets,
+  singleCharacter,
+  inventoryLayout,
+  onInventoryLayoutChange,
+}: Props) {
   const vault = getVault(stores);
   const currentStore = getCurrentStore(stores);
   const setSetting = useSetSetting();
@@ -104,6 +113,9 @@ export default function DesktopStores({ stores, buckets, singleCharacter }: Prop
               <AppIcon icon={vaultUnder ? levellingIcon : levelDownIcon} />
             </button>
           </div>
+          {inventoryLayout && onInventoryLayoutChange && (
+            <InventoryLayoutToggle layout={inventoryLayout} onChange={onInventoryLayoutChange} />
+          )}
           {$featureFlags.issueBanner && <IssueAwarenessBanner />}
         </HeaderShadowDiv>
 

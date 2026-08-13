@@ -1,0 +1,29 @@
+@use '../variables.scss' as *;
+
+.toggle {
+  display: flex;
+  align-self: center;
+  margin: 0 8px;
+  border: 1px solid rgb(255, 255, 255, 0.25);
+  background: rgb(0, 0, 0, 0.2);
+}
+
+.toggleButton {
+  composes: resetButton from '../dim-ui/common.m.scss';
+
+  padding: 5px 8px;
+  color: var(--theme-text-secondary);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  @include interactive($hover: true, $focus: true) {
+    color: var(--theme-text);
+    background: rgb(255, 255, 255, 0.08);
+  }
+}
+
+.selected {
+  color: #111 !important;
+  background: var(--theme-accent-primary) !important;
+}

@@ -420,6 +420,7 @@
     "Shop": "Shop",
     "TagAs": "Tag as '{{tag}}'",
     "UpgradeDIM": "Update DIM",
+    "Vault": "",
     "WhatsNew": "What's New"
   },
   "Help": {
@@ -1235,6 +1236,9 @@
     "InventoryColumns": "Character inventory width",
     "InventoryColumnsMobile": "Character inventory width on mobile portrait",
     "InventoryColumnsMobileLine2": "The items will be resized to accommodate the new setting",
+    "InventoryLayout": "Inventory layout",
+    "InventoryLayoutClassic": "Classic",
+    "InventoryLayoutGame": "Game Style",
     "InventoryNumberOfSpacesToClear": "Number of empty spaces to make when using Farming Mode",
     "Items": "Item Display",
     "Language": "Language",
