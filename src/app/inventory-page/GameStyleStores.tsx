@@ -48,7 +48,7 @@ const armorBuckets = [
   BucketHashes.ClassArmor,
 ];
 
-const auxiliaryBuckets = [BucketHashes.Subclass, BucketHashes.Ghost, BucketHashes.Artifacts];
+const sideAuxiliaryBuckets = [BucketHashes.Ghost, BucketHashes.Artifacts];
 
 export default function GameStyleStores({
   stores,
@@ -136,6 +136,7 @@ export default function GameStyleStores({
             buckets={buckets}
             store={selectedStore}
             align="right"
+            auxiliaryBucketHashes={sideAuxiliaryBuckets}
           />
           <CharacterIdentity store={selectedStore} buckets={buckets} />
           <EquipmentRail
@@ -269,12 +270,14 @@ function EquipmentRail({
   buckets,
   store,
   align = 'left',
+  auxiliaryBucketHashes,
 }: {
   label: string;
   bucketHashes: number[];
   buckets: InventoryBuckets;
   store: DimStore;
   align?: 'left' | 'right';
+  auxiliaryBucketHashes?: number[];
 }) {
   return (
     <section
@@ -283,6 +286,20 @@ function EquipmentRail({
     >
       <h2>{label}</h2>
       {bucketHashes.map((bucketHash) => {
+        const bucket = buckets.byHash[bucketHash];
+        return bucket ? (
+          <section className={styles.equipmentBucket} key={bucketHash}>
+            <h3>{bucket.name}</h3>
+            <StoreBucket
+              store={store}
+              bucket={bucket}
+              singleCharacter={false}
+              addItemToUnequippedGrid
+            />
+          </section>
+        ) : null;
+      })}
+      {auxiliaryBucketHashes?.map((bucketHash) => {
         const bucket = buckets.byHash[bucketHash];
         return bucket ? (
           <section className={styles.equipmentBucket} key={bucketHash}>
@@ -323,12 +340,11 @@ function CharacterIdentity({ store, buckets }: { store: DimStore; buckets: Inven
         </div>
       </div>
       <StoreStats store={store} />
-      <div className={styles.auxiliarySlots}>
-        {auxiliaryBuckets.map((bucketHash) => {
-          const bucket = buckets.byHash[bucketHash];
-          return bucket ? <AuxiliarySlot key={bucketHash} store={store} bucket={bucket} /> : null;
-        })}
-      </div>
+      {buckets.byHash[BucketHashes.Subclass] && (
+        <div className={styles.subclassSlot}>
+          <AuxiliarySlot store={store} bucket={buckets.byHash[BucketHashes.Subclass]} />
+        </div>
+      )}
     </section>
   );
 }

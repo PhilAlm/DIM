@@ -2,7 +2,6 @@
 // Please do not change this file!
 interface CssExports {
   'auxiliarySlot': string;
-  'auxiliarySlots': string;
   'canDrop': string;
   'categoryTab': string;
   'categoryTabs': string;
@@ -27,6 +26,7 @@ interface CssExports {
   'singleCharacterButton': string;
   'singleStore': string;
   'stage': string;
+  'subclassSlot': string;
   'title': string;
   'toolbar': string;
 }
