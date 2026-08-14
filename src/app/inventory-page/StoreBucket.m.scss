@@ -58,6 +58,30 @@
   }
 }
 
+.pullItemGridButton {
+  display: grid;
+  place-items: center;
+  width: var(--item-size);
+  height: calc(var(--item-size) + #{$badge-height} - #{$item-border-width});
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255, 0.13);
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgb(255, 255, 255, 0.035), transparent 45%), rgb(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(0, 0, 0, 0.14);
+}
+
+.emptyGearSlot {
+  width: var(--item-size);
+  height: calc(var(--item-size) + #{$badge-height} - #{$item-border-width});
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255, 0.13);
+  background:
+    linear-gradient(135deg, rgb(255, 255, 255, 0.035), transparent 45%), rgb(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(0, 0, 0, 0.14);
+}
+
 // Resize all the items in the engram bucket to be engram-sized
 // This is also .sub-bucket
 .engrams {

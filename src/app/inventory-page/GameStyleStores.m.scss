@@ -114,13 +114,56 @@
   }
 }
 
+.rightAlignedRail {
+  > h2 {
+    text-align: right;
+  }
+
+  .equipmentBucket {
+    grid-template-columns:
+      calc((var(--item-size) * 3) + (var(--item-margin) * 2))
+      calc(var(--item-size) + #{$equipped-item-total-outset});
+    justify-content: end;
+    border-right: 2px solid rgb(255, 255, 255, 0.22);
+    border-left: 0;
+    background: linear-gradient(270deg, rgb(255, 255, 255, 0.075), transparent 88%);
+
+    > h3 {
+      text-align: right;
+    }
+
+    > :global(.sub-bucket) {
+      justify-content: end;
+    }
+
+    // StoreBucket renders the equipped drop target before the carried-items
+    // target. Its "equipped" class is CSS-module scoped, so target its stable
+    // position rather than a global class name.
+    > :global(.sub-bucket):first-of-type {
+      grid-column: 2;
+      align-items: flex-end;
+    }
+
+    > :global(.sub-bucket):last-of-type {
+      grid-column: 1;
+    }
+  }
+}
+
 .equipmentBucket {
+  display: grid;
+  grid-template-columns:
+    calc(var(--item-size) + #{$equipped-item-total-outset})
+    calc((var(--item-size) * 3) + (var(--item-margin) * 2));
+  column-gap: var(--item-margin);
+  align-items: start;
   margin-bottom: 13px;
   padding: 8px 10px 3px;
   border-left: 2px solid rgb(255, 255, 255, 0.22);
   background: linear-gradient(90deg, rgb(255, 255, 255, 0.075), transparent 88%);
 
   > h3 {
+    grid-column: 1 / -1;
     margin: 0 0 4px;
     color: var(--theme-text-secondary);
     font-size: 10px;
@@ -130,8 +173,19 @@
   }
 
   > :global(.sub-bucket) {
-    grid-template-columns: repeat(auto-fill, var(--item-size));
+    grid-template-columns: repeat(3, var(--item-size));
     padding-bottom: 4px;
+  }
+
+  > :global(.sub-bucket):first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 0;
+  }
+
+  > :global(.sub-bucket):last-of-type {
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 

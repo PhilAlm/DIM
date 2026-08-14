@@ -21,6 +21,7 @@ interface CssExports {
   'inventoryDeck': string;
   'isOver': string;
   'power': string;
+  'rightAlignedRail': string;
   'selectedCategory': string;
   'selectedCharacter': string;
   'singleCharacterButton': string;

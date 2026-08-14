@@ -3,10 +3,12 @@
 interface CssExports {
   'armorClassIcon': string;
   'emptyEngram': string;
+  'emptyGearSlot': string;
   'engrams': string;
   'inlineGroups': string;
   'notEquippable': string;
   'pullItemButton': string;
+  'pullItemGridButton': string;
   'subClass': string;
   'vaultGroup': string;
   'weaponGroupingIconWrapper': string;

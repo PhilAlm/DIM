@@ -70,6 +70,7 @@ const StoreBucketInner = memo(function StoreBucketInner({
   storeName,
   storeClassType,
   isVault,
+  addItemToUnequippedGrid,
 }: {
   bucket: InventoryBucket;
   destinyVersion: DestinyVersion;
@@ -78,6 +79,7 @@ const StoreBucketInner = memo(function StoreBucketInner({
   storeClassType: DestinyClass;
   isVault: boolean;
   items: DimItem[];
+  addItemToUnequippedGrid: boolean;
 }) {
   const dispatch = useThunkDispatch();
   const sortItems = useSelector(itemSorterSelector);
@@ -95,6 +97,11 @@ const StoreBucketInner = memo(function StoreBucketInner({
     isVault && bucket.inWeapons
       ? groupWeapons(sortItems(items))
       : sortItems(isVault ? items : items.filter((i) => !i.equipped));
+  const showGridAddItem =
+    addItemToUnequippedGrid && bucket.hasTransferDestination && unequippedItems.length < 9;
+  const emptyGridSlotCount = addItemToUnequippedGrid
+    ? Math.max(0, 9 - unequippedItems.length - (showGridAddItem ? 1 : 0))
+    : 0;
 
   // represents whether there's *supposed* to be an equipped item here, aka armor/weapon/artifact, etc
   const isEquippable = Boolean(equippedItem || bucket.equippable);
@@ -119,7 +126,7 @@ const StoreBucketInner = memo(function StoreBucketInner({
               <StoreInventoryItem key={equippedItem.index} item={equippedItem} />
             </div>
           )}
-          {bucket.hasTransferDestination && (
+          {bucket.hasTransferDestination && !addItemToUnequippedGrid && (
             <a
               onClick={pickEquipItem}
               className={styles.pullItemButton}
@@ -165,6 +172,21 @@ const StoreBucketInner = memo(function StoreBucketInner({
             </div>
           ),
         )}
+        {showGridAddItem && (
+          <a
+            onClick={pickEquipItem}
+            className={clsx(styles.pullItemButton, styles.pullItemGridButton)}
+            title={t('MovePopup.PullItem', {
+              bucket: bucket.name,
+              store: storeName,
+            })}
+          >
+            <AppIcon icon={addIcon} />
+          </a>
+        )}
+        {Array.from({ length: emptyGridSlotCount }, (_, index) => (
+          <span className={styles.emptyGearSlot} aria-hidden="true" key={`empty-${index}`} />
+        ))}
         {isEngrams &&
           !isVault &&
           Array.from(
@@ -257,10 +279,12 @@ export default function StoreBucket({
   store,
   bucket,
   singleCharacter,
+  addItemToUnequippedGrid = false,
 }: {
   store: DimStore;
   bucket: InventoryBucket;
   singleCharacter: boolean;
+  addItemToUnequippedGrid?: boolean;
 }) {
   const currentStore = useSelector(currentStoreSelector);
   const stores = useSelector(storesSelector);
@@ -308,6 +332,7 @@ export default function StoreBucket({
       storeClassType={store.classType}
       isVault={store.isVault}
       items={stableItems}
+      addItemToUnequippedGrid={addItemToUnequippedGrid}
     />
   );
 }

@@ -135,6 +135,7 @@ export default function GameStyleStores({
             bucketHashes={weaponBuckets}
             buckets={buckets}
             store={selectedStore}
+            align="right"
           />
           <CharacterIdentity store={selectedStore} buckets={buckets} />
           <EquipmentRail
@@ -267,21 +268,31 @@ function EquipmentRail({
   bucketHashes,
   buckets,
   store,
+  align = 'left',
 }: {
   label: string;
   bucketHashes: number[];
   buckets: InventoryBuckets;
   store: DimStore;
+  align?: 'left' | 'right';
 }) {
   return (
-    <section className={styles.equipmentRail} aria-label={label}>
+    <section
+      className={clsx(styles.equipmentRail, { [styles.rightAlignedRail]: align === 'right' })}
+      aria-label={label}
+    >
       <h2>{label}</h2>
       {bucketHashes.map((bucketHash) => {
         const bucket = buckets.byHash[bucketHash];
         return bucket ? (
           <section className={styles.equipmentBucket} key={bucketHash}>
             <h3>{bucket.name}</h3>
-            <StoreBucket store={store} bucket={bucket} singleCharacter={false} />
+            <StoreBucket
+              store={store}
+              bucket={bucket}
+              singleCharacter={false}
+              addItemToUnequippedGrid
+            />
           </section>
         ) : null;
       })}
